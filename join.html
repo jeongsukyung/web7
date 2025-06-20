@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2506009 정수경 - 회원가입</title>
+
+   <style>
+    body {
+        background-color: rgb(255, 255, 255);
+    }
+
+    header {
+        background-color: rgb(0, 75, 187);
+        padding: 15px 30px;
+        text-align: center;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: inline-block;
+    }
+
+    ul li {
+        display: inline-block;
+        padding: 0 15px;
+    }
+
+    ul li a {
+        color: rgb(255, 255, 255);
+        text-decoration: none;
+    }
+
+    ul li a:hover {
+        color: rgb(34, 76, 192);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    form {
+        width: 400px;
+        margin: 40px auto;
+        padding: 20px;
+        border: 2px solid rgb(177, 176, 176);
+        border-radius: 10px;
+        background-color: rgb(235, 240, 209);
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 0 0;
+        font-weight: bold;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 0 0;
+        box-sizing: border-box;
+    }
+
+    .checkbox-group {
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 6px;
+        padding: 10px;
+        margin: 5px 0;
+        background: rgb(255, 255, 255);
+    }
+
+    .checkbox-group label {
+        margin: 5px 0;
+        font-weight: normal;
+    }
+
+    button {
+        margin: 20px 0 0 0;
+        padding: 10px;
+        background-color: rgb(17, 34, 129);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 4px;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    footer {
+        background-color: rgb(0, 75, 187);
+        color: rgb(255, 255, 255);
+        text-align: center;
+        padding: 15px;
+        margin: 50px 0 0 0;
+    }
+</style>
+
+<script>
+        function showAge() {
+            var birth = document.getElementById("birth").value;
+            var year = birth.substring(0, 4);
+            var age = 2025 - year;
+            document.getElementById("ageText").iannerHTML = "나이: " + age + "세";
+        }
+
+        function showPopup() {
+            var name = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var birth = document.getElementById("birth").value;
+            var gender = document.getElementById("gender").value;
+            var intro = document.getElementById("intro").value;
+
+            var year = birth.substring(0, 4);
+            var age = 2025 - year;
+
+            var food1 = document.getElementsByName("interest")[0].checked;
+            var food2 = document.getElementsByName("interest")[1].checked;
+            var food3 = document.getElementsByName("interest")[2].checked;
+
+            var food = "";
+            if (food1) { food += "한식 "; }
+            if (food2) { food += "일식 "; }
+            if (food3) { food += "양식 "; }
+
+            alert("회원가입 완료!\n\n" +
+                "이름: " + name + "\n" +
+                "이메일: " + email + "\n" +
+                "전화번호: " + phone + "\n" +
+                "생년월일: " + birth + " (나이 : " + age + "세)\n" +
+                "성별: " + gender + "\n" +
+                "음식 취향: " + food + "\n" +
+                "자기소개: " + intro);
+        }
+</script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="introduce.html">자기소개</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="school.html">미래인재학부</a></li>
+                <li><a href="event.html">이벤트</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>회원가입 양식</h1>
+        
+        <form>
+        <label for="username">이름</label>
+        <input type="text" id="username">
+
+        <label for="email">이메일</label>
+        <input type="email" id="email">
+
+        <label for="phone">전화번호</label>
+        <input type="tel" id="phone" placeholder="010-0000-0000">
+
+        <label for="password">비밀번호</label>
+        <input type="password" id="password">
+
+        <label for="birth">생년월일</label>
+        <input type="date" id="birth" onchange="showAge()">
+        <div id="ageText" class="age-text"></div>
+
+        <label for="gender">성별</label>
+        <select id="gender">
+            <option>남성</option>
+            <option>여성</option>
+        </select>
+
+        <label>음식 취향</label>
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="interest">한식</label>
+            <label><input type="checkbox" name="interest">일식</label>
+            <label><input type="checkbox" name="interest">양식</label>
+        </div>
+
+        <label for="intro">자기소개</label>
+        <textarea id="intro" rows="4" placeholder="자기소개 글을 작성해주세요."></textarea>
+
+        <button type="button" onclick="showPopup()">회원가입</button>
+    </form>
+
+
+
+    <footer>
+        미래인재학부 2506009 정수경 - 웹프로그래밍 기말과제
+    </footer>
+</body>
+
+
+
+</html>

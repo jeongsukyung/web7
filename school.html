@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>2506009 정수경 - 미래인재학부</title>
+
+    <style>
+        body { background-color: rgb(255, 255, 255);}
+
+        header { 
+            background-color: rgb(0, 75, 187);
+            padding: 15px 30px; 
+            text-align: center;  
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: inline-block;
+        }
+
+        ul li {
+            display : inline-block;
+            list-style-type : none;
+            padding : 0px 15px;
+        }
+
+        ul li a {
+            color : white; 
+            text-decoration : none;
+        }
+
+         ul li a:hover {
+            color : rgb(255, 143, 143); 
+        }
+
+        .main { 
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: rgb(0, 75, 187);
+        }
+
+        h2 {
+            color: rgb(54, 54, 54);
+            margin: 30px 0 0 0;
+        }
+
+        footer {
+            background-color: rgb(0, 75, 187);
+            color: aliceblue;
+            text-align: center;
+            padding: 15px;
+            margin: 50px 0 0 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="main.html">홈</a></li>
+                <li><a href="introduce.html">자기소개</a></li>
+                <li><a href="join.html">회원가입</a></li>
+                <li><a href="school.html">미래인재학부</a></li>
+                <li><a href="event.html">이벤트</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<div class="main">
+    <h1>미래인재학부 소개</h1>
+    <p>
+        미래인재학부는 전 산업 분야 신산업 역량을 배양하고 재직자의 AI 역량을 향상시켜 디지털 분야 전문인재 양성을 목적으로 함
+    </p>
+
+    <h2>특징</h2>
+    <ul>
+        <li>사회수요기반의 첨단디지털교육 제공</li>
+        <li>학습자 경험 및 요구 기반의 자기설계전공학부</li>
+    </ul>
+
+    <button onclick="document.getElementById('result').innerHTML='사진에 마우스를 올려보세요'">
+        비밀메세지
+    </button>
+    <p id="result" style="font-weight: bold; color: #014d99;"></p>
+
+    <img src="hansung.jpg" alt="한성대 로고"
+        width="300"
+        onmouseenter="this.src='hansung2.jpg'"
+        onmouseleave="this.src='hansung.jpg'">
+
+    <p id="changeText"
+       onmouseenter="this.style.color='#013e7c'"
+       onmouseleave="this.style.color='#8f8e8e'">
+       미래인재학부 ↓
+
+    </p>
+
+    <a href="https://futureplus.hansung.ac.kr/ko/department/future">
+        사이트 바로가기
+    </a>
+</div>
+
+
+    <footer>
+        미래인재학부 2506009 정수경 - 웹프로그래밍 기말과제
+    </footer>
+</body>
+
+
+
+</html>
